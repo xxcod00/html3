@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+
+
+    <style>
+
+        * {
+
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: blue;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: purple;
+        }
+
+        #test { color: white;
+
+
+        }
+
+        #test_status {
+            color: white;
+
+
+        }
+
+
+
+
+    </style>
+
+
+</head>
+<body background="https://mediacdn.mancity.com/-/media/Wallpapers/champions18/champions%20banner%20201718">
+
+
+<ul>
+    <li><a href="file:///C:/Users/tamsirmomodou.jeng/Desktop/slutprojekt.htm%C3%B6.html"> Startsida </a></li>
+
+    <li style="float:right"><a href="file:///C:/Users/tamsirmomodou.jeng/Desktop/slutprojektquiz.html"> Man City Quiz </a></li>
+</ul>
+
+
+
+<!--Visar vilken fråga användaren är på-->
+<h2 id="test_status"></h2>
+
+<!--Diven som frågeformuläret visas i-->
+<div id="test"></div>
+
+
+
+
+<script>
+    /*Variablar som används (REDIGERA EJ)*/
+    var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
+    /*Array med frågor. (FÖR ATT LÄGGA TILL FLER FRÅGOR SKAPA FLER ARRAYS MED, se exempel nedan!)*/
+
+    var questions = [
+        ["När startades Manchester City?", "1880", "1940", "2000", 'A'],
+        ["Vart grundades Manchester City?", "West gorton i Manchester", "London", "Birmingham", 'A'],
+        ["Vem var en av grundarna för Manchester City?", "Emma Coonell", "Anna Coonell", "Gorton", 'B'],
+        ["1884 bytte klubben namn till...", "Gorton AFC", "Manchester City", "Ardwick AFC", 'C']
+    ];
+
+    function _(x) {
+        return document.getElementById(x);
+    }
+    function renderQuestion() {
+        test = _("test");
+        /*Visar slut resultat och resetar variablar om testes är slut (REDIGERA EJ)*/
+        if (pos >= questions.length) {
+            test.innerHTML = "<h2>Du fick "+correct+" av "+questions.length+" rätt!</h2>";
+            _("test_status").innerHTML = "Quizet är klart, starta om sidan för att börja om quizet.";
+            pos = 0;
+            correct = 0;
+            return false;
+        }
+        /*Skriver ut vilken fråga användaren är på (REDIGERA EJ)*/
+        _("test_status").innerHTML = "Fråga "+(pos+1)+" av "+questions.length;
+        /*Skapar variablar för frågor och svarsalternativ (REDIGERA EJ)*/
+        question = questions[pos][0];
+        chA = questions[pos][1];
+        chB = questions[pos][2];
+        chC = questions[pos][3];
+        /*Skriver ut frågan och de olika svarsalternativen (REDIGERA EJ*) (*går dock att redigera vad som ska stå i svarsknappen)*/
+        test.innerHTML = "<h4>"+question+"</h4>";
+        test.innerHTML += "<input type='radio' name='choices' value='A'>" +chA+ "<br>";
+        test.innerHTML += "<input type='radio' name='choices' value='B'>" +chB+ "<br>";
+        test.innerHTML += "<input type='radio' name='choices' value='C'>" +chC+ "<br>";
+        test.innerHTML += "<button onclick='checkAnswer()'>Nästa fråga</button>";
+    }
+    /*Kollar om Svaret är korrekt (REDIGERA EJ)*/
+    function checkAnswer() {
+        choices = document.getElementsByName("choices");
+        for (var i=0; i<choices.length; i++) {
+            if (choices[i].checked) {
+                choice = choices[i].value;
+            }
+        }
+        /*Om svaret är korrekt så adderas ett poäng i variabeln "correct" (REDIGERA EJ)*/
+        if (choice == questions[pos][4]) {
+            correct++;
+        }
+        /*Adderar en position i "pos" variabeln och laddar nästa fråga (REDIGERA EJ)*/
+        pos++;
+        renderQuestion();
+    }
+    /*Laddar scriptet när sidan är laddad (REDIGERA EJ)*/
+    window.addEventListener("load", renderQuestion);
+</script>
+
+
+
+
+
+</body>
+</html>

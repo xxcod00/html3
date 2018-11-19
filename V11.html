@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VIRTUAL PRO ELEVEN</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="v11.css">
+
+    </head>
+
+<body>
+<div class="wrapper">
+    <header>
+
+        <nav>
+
+            <div class="menu-icon">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+
+            <div class="logo">
+                <a href="regist.html">Registrera dig idag!</a>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="file:///C:/Users/tamsirmomodou.jeng/Desktop/V11.html">Startsida</a></li>
+                    <li><a href="#">Spelschema</a></li>
+                    <li><a href="#">Tabell</a></li>
+                    <li><a href="#">Lag</a></li>
+                    <li><a href="file:///C:/Users/tamsirmomodou.jeng/Desktop/kontaktaoss.html">Kontakta oss</a></li>
+                    <li><a href="file:///C:/Users/tamsirmomodou.jeng/Desktop/regler.html">Regler</a></li>
+                    <li><a href="file:///C:/Users/tamsirmomodou.jeng/Desktop/login.html">Logga in</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="content">
+        <p>
+             Välkommen till V11(VIRTUAL PRO ELEVEN)
+        </p>
+        <p>
+            Vi i V11 vill att alla ska ha det roligt utan tjafs. Därför rekommenderar vi att ni bör gå igenom reglerna innan ni anmäler er till turneringen. Denna turnering är dedikarad för alla som har länge sökt efter utmaning i pro clubs men aldrig funnit. Samt dessa som älskar turneringar och att vinna. Vi välkomnar dig och ditt lag till V11.
+
+        </p>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    // Menu-toggle button
+
+    $(document).ready(function() {
+        $(".menu-icon").on("click", function() {
+            $("nav ul").toggleClass("showing");
+        });
+    });
+
+    // Scrolling Effect
+
+    $(window).on("scroll", function() {
+        if($(window).scrollTop()) {
+            $('nav').addClass('black');
+        }
+
+        else {
+            $('nav').removeClass('black');
+        }
+    })
+
+
+</script>
+
+</body>
+</html>

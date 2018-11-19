@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;
+    background-image: url(https://i.ytimg.com/vi/gqyouCyVm9s/maxresdefault.jpg);
+        background-position: center;
+        background-attachment: fixed;
+
+    }
+    body {font-family: Arial, Helvetica, sans-serif;}
+    form {border: 3px solid #f1f1f1;}
+
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }
+
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+    }
+
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+    }
+
+    img.avatar {
+        width: 40%;
+        border-radius: 50%;
+    }
+
+    .container {
+        padding: 16px;
+        color: lawngreen;
+    }
+
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+        .cancelbtn {
+            width: 100%;
+        }
+    }
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    header {
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+    }
+
+    .content {
+        width: 100%;
+        margin: -20em auto;
+        font-size: 25px;
+        line-height: 30px;
+        text-align: center;
+        color: white;
+    }
+
+    .logo {
+        line-height: 60px;
+        position: fixed;
+        float: left;
+        margin: 16px 46px;
+        color: silver;
+        font-weight: bold;
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
+    nav {
+        position: fixed;
+        width: 100%;
+        line-height: 60px;
+    }
+
+    nav ul {
+        line-height: 60px;
+        list-style: none;
+        background: rgba(0, 0, 0, 0);
+        overflow: hidden;
+        color: #fff;
+        padding: 0;
+        text-align: right;
+        margin: 0;
+        padding-right: 40px;
+        transition: 1s;
+    }
+
+    nav.black ul {
+        background: #000;
+    }
+
+    nav ul li {
+        display: inline-block;
+        padding: 16px 40px;;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .menu-icon {
+        line-height: 60px;
+        width: 100%;
+        background: #000;
+        text-align: right;
+        box-sizing: border-box;
+        padding: 15px 24px;
+        cursor: pointer;
+        color: #fff;
+        display: none;
+    }
+
+    @media(max-width: 786px) {
+
+        .logo {
+            position: fixed;
+            top: 0;
+            margin-top: 16px;
+        }
+
+        nav ul {
+            max-height: 0px;
+            background: #000;
+        }
+
+        nav.black ul {
+            background: #000;
+        }
+
+        .showing {
+            max-height: 34em;
+        }
+
+        nav ul li {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .menu-icon {
+            display: block;
+        }
+
+
+
+
+</style>
+<body>
+
+<div class="wrapper">
+    <header>
+
+        <nav>
+
+            <div class="menu-icon">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+
+            <div class="logo">
+                V11
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="file:///C:/Users/tamsirmomodou.jeng/Desktop/V11.html#">Startsida</a></li>
+                    <li><a href="#">Spelschema</a></li>
+                    <li><a href="#">Tabell</a></li>
+                    <li><a href="#">Lag</a></li>
+                    <li><a href="#">Kontakta oss</a></li>
+                    <li><a href="file:///C:/Users/tamsirmomodou.jeng/Desktop/regler.html">Regler</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="content">
+        <p>
+
+        </p>
+        <p>
+
+        </p>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    // Menu-toggle button
+
+    $(document).ready(function() {
+        $(".menu-icon").on("click", function() {
+            $("nav ul").toggleClass("showing");
+        });
+    });
+
+    // Scrolling Effect
+
+    $(window).on("scroll", function() {
+        if($(window).scrollTop()) {
+            $('nav').addClass('black');
+        }
+
+        else {
+            $('nav').removeClass('black');
+        }
+    })
+
+
+</script>
+
+<form action="/action_page.php" style="border:1px solid #ccc">
+    <div class="container">
+        <h1>Registrera</h1>
+        <p>Vänligen fyll i formuläret nedan för att skapa ditt konto.</p>
+        <hr>
+
+        <label for="email"><b>E-post</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+
+        <label for="psw"><b>Lösenord</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <label for="pswrepeat"><b>Bekräfta Lösenord</b></label>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+        <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        </label>
+
+        <p>Med denna registrering accepterar du våra <a href="file:///C:/Users/tamsirmomodou.jeng/Desktop/regler.html" style="color:dodgerblue">Regler och Vilkor</a>.</p>
+
+        <div class="clearfix">
+            <button formaction="file:///C:/Users/tamsirmomodou.jeng/Desktop/V11.html" class="cancelbtn" >Gå tillbaka</button>
+            <button type="submit" class="signupbtn">Registrera</button>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>
